@@ -1,0 +1,24 @@
+{
+  "name": "flickrfetch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "copyStatic": "cp index.html dist/index.html && cp css/bootstrap.min.css dist/css/bootstrap.min.css",
+    "clean": "rm -rf dist && mkdir dist && mkdir dist/js && mkdir dist/css",
+    "watch": "npm run clean && npm run copyStatic && watchify js/index.js -o dist/js/bundle.js -dv -t babelify",
+    "build": "bin/build.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lyle Garza",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.26.1",
+    "restwrapper": "0.0.14"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "envify": "^3.4.0"
+  }
+}
